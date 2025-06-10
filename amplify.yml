@@ -9,15 +9,15 @@ applications:
         build:
           commands:
             - npm run build
-            - npm run build:server
-      artifacts:
+            - npm run build:server      artifacts:
         baseDirectory: .
         files:
           - .next/**/*
           - dist/**/*
           - node_modules/**/*
           - package.json
-          - next.config.js      cache:
+          - next.config.js
+      cache:
         paths:
           - node_modules/**/*
     backend:
@@ -26,11 +26,12 @@ applications:
           commands:
             - npm install --legacy-peer-deps
             - npm run build:server
-            - npm run server:prod
       artifacts:
         baseDirectory: dist
         files:
           - '**/*'
+          - package.json
+          - node_modules/**/*
       cache:
         paths:
           - node_modules/**/*
