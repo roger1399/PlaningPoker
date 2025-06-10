@@ -17,8 +17,7 @@ applications:
           - dist/**/*
           - node_modules/**/*
           - package.json
-          - next.config.js
-      cache:
+          - next.config.js      cache:
         paths:
           - node_modules/**/*
     backend:
@@ -26,6 +25,7 @@ applications:
         build:
           commands:
             - npm install --legacy-peer-deps
+            - npm run build:server
             - npm run server:prod
       artifacts:
         baseDirectory: dist
