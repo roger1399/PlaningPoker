@@ -7,14 +7,16 @@ applications:
           commands:
             - npm install --legacy-peer-deps
         build:
-          commands:
+          commands:            
             - npm run build
             - npm run build:server
       artifacts:
-        baseDirectory: .next/standalone
+        baseDirectory: .next
         files:
-          - '**/*'
-          - ../.next/static/**/*
+          - standalone/**/*
+          - static/**/*
+          - required-server-files.json
+          - package.json
           - ../public/**/*
       cache:
         paths:
