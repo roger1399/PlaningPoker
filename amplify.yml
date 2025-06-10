@@ -7,9 +7,10 @@ applications:
           commands:
             - npm install --legacy-peer-deps
         build:
-          commands:
+          commands:            
             - npm run build
-            - npm run build:server      artifacts:
+            - npm run build:server
+      artifacts:
         baseDirectory: .
         files:
           - .next/**/*
