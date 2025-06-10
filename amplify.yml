@@ -1,11 +1,10 @@
 version: 1
 applications:
   - appRoot: .
-    frontend:
-      phases:
+    frontend:      phases:
         preBuild:
           commands:
-            - npm install
+            - npm install --legacy-peer-deps
         build:
           commands:
             - npm run build
