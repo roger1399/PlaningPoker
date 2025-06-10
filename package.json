@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node server-build.js",
+    "build": "next build",
+    "build:server": "node server-build.js",
     "start": "next start",
     "server": "ts-node --project tsconfig.server.json src/server.ts",
     "server:prod": "node dist/server.js",
