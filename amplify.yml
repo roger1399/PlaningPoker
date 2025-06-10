@@ -1,0 +1,33 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            - npm run build
+            - node server-build.js
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+          - ../dist/**/*
+      cache:
+        paths:
+          - node_modules/**/*
+    appRoot: .
+  - backend:
+      phases:
+        build:
+          commands:
+            - npm ci
+            - npm run server:prod
+      artifacts:
+        baseDirectory: dist
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
